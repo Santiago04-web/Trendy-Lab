@@ -1,42 +1,39 @@
 /* ==========================================================================
-   TRENDY LAB - Design System & Modern Streetwear / Fashion Styling
-   Colors: Jet Black, Pure White, Cyber Gray, Minimal Silver Accents
+   TRENDY LAB - Modern Urban & Contemporary Fashion Design System
+   Identity: Dark Editorial / High Contrast Minimal Streetwear
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  --bg-primary: #0a0a0c;
-  --bg-secondary: #111114;
-  --bg-card: #151518;
-  --bg-card-hover: #1c1c22;
-  --text-primary: #ffffff;
-  --text-secondary: #9ea0a8;
-  --text-muted: #656770;
-  --accent-white: #ffffff;
-  --accent-light: #f3f4f6;
-  --accent-border: rgba(255, 255, 255, 0.1);
-  --accent-border-hover: rgba(255, 255, 255, 0.3);
-  --accent-glow: 0 0 25px rgba(255, 255, 255, 0.15);
-  --badge-bg: rgba(255, 255, 255, 0.05);
+  --bg-main: #09090b;
+  --bg-surface: #111115;
+  --bg-card: #16161c;
+  --bg-card-hover: #1d1d24;
+  --text-pure: #ffffff;
+  --text-sub: #a1a1aa;
+  --text-dim: #71717a;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-bright: rgba(255, 255, 255, 0.25);
+  --accent-glow: 0 0 30px rgba(255, 255, 255, 0.12);
 }
 
 html {
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--bg-main);
+  color: var(--text-pure);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   overflow-x: hidden;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--bg-main);
+  color: var(--text-pure);
 }
 
-/* Typography Classes */
+/* Typography Helpers */
 .font-display {
   font-family: 'Syne', sans-serif;
 }
@@ -45,173 +42,154 @@ body {
   font-family: 'Space Grotesk', monospace, sans-serif;
 }
 
-/* Gradients and Text Highlights */
-.text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #d1d5db 50%, #9ca3af 100%);
+/* Text Gradients */
+.text-gradient-silver {
+  background: linear-gradient(135deg, #ffffff 0%, #e4e4e7 40%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.silver-gradient-border {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.silver-gradient-border:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: var(--accent-glow);
-}
-
-/* Custom Buttons */
-.btn-primary {
-  background-color: #ffffff;
-  color: #0a0a0c;
+/* Buttons */
+.btn-tl-primary {
+  background: #ffffff;
+  color: #09090b;
   font-weight: 700;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
 }
 
-.btn-primary:hover {
-  background-color: #f3f4f6;
+.btn-tl-primary:hover {
+  background: #f4f4f5;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 28px rgba(255, 255, 255, 0.28);
 }
 
-.btn-secondary {
+.btn-tl-secondary {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-secondary:hover {
+.btn-tl-secondary:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
 }
 
 /* Cards & Layout */
-.tl-card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--accent-border);
+.tl-fashion-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
 
-.tl-card::before {
+.tl-fashion-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
   opacity: 0;
   transition: opacity 0.35s ease;
 }
 
-.tl-card:hover {
-  border-color: var(--accent-border-hover);
-  background-color: var(--bg-card-hover);
+.tl-fashion-card:hover {
+  border-color: var(--border-bright);
+  background: var(--bg-card-hover);
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
 }
 
-.tl-card:hover::before {
+.tl-fashion-card:hover::before {
   opacity: 1;
 }
 
-/* Infinite Marquee Animation */
-@keyframes marquee {
+/* Marquee / Ticker */
+@keyframes tickerSlide {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
 }
 
-.animate-marquee {
+.animate-ticker {
   display: flex;
   width: 200%;
-  animation: marquee 25s linear infinite;
+  animation: tickerSlide 22s linear infinite;
 }
 
-.animate-marquee:hover {
+.animate-ticker:hover {
   animation-play-state: paused;
 }
 
 /* Image Zoom */
-.img-zoom {
+.zoom-frame {
   overflow: hidden;
 }
 
-.img-zoom img {
+.zoom-frame img {
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
 }
 
-.img-zoom:hover img {
+.zoom-frame:hover img {
   transform: scale(1.06);
 }
 
-/* Sticky Header Scroll State */
+/* Sticky Header Scroll */
 #main-header.scrolled {
-  background-color: rgba(10, 10, 12, 0.92);
+  background: rgba(9, 9, 11, 0.92);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* WhatsApp Pulse Animation */
-@keyframes waPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
+/* WhatsApp Pulse Button */
+@keyframes waPulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-.wa-pulse-btn {
-  animation: waPulse 2.5s infinite;
+.wa-pulse {
+  animation: waPulseGlow 2.5s infinite;
 }
 
 /* Modals */
-.modal-overlay {
+.modal-layer {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.modal-overlay.active {
+.modal-layer.active {
   opacity: 1;
   visibility: visible;
 }
 
-.modal-box {
+.modal-sheet {
   transform: scale(0.95) translateY(10px);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.modal-overlay.active .modal-box {
+.modal-layer.active .modal-sheet {
   transform: scale(1) translateY(0);
 }
 
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #0a0a0c;
+  background: #09090b;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #232328;
+  background: #27272a;
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #3f3f46;
 }
